@@ -1,35 +1,31 @@
-# Création d'un projet Symfony 4
+# Le serveur interne de Symfony 4
 > ### Objectifs :
-> Savoir créer un nouveau projet Symfony 4 avec le gestionaire Composer
-> ### Notes :
-> Dans ce cours, le terme **my-project** réprésente le nom du projet. Remplacez ce terme par le nom de votre projet.
+> Installer, démarrer et arrêter le serveur interne de Symfony 4.
 
-# Création d'un projet 
-
-Vous pouvez créer votre projet Symfony de deux façons :
-
-## Pour une architecture classique
-
-```bash
-composer create-project symfony/website-skeleton my-project
-```
-
-Le gestionnaire Composer prépare votre nouveau projet Symfony dans un répertoire `my-project`.
-Se projet sera basé sur l'architecture `symfony/website-skeleton`.
-
-## Pour une architecture WebService
+# Création d'un nouveau projet
 
 ```bash
 composer create-project symfony/skeleton my-project
+cd my-project
 ```
 
-Le gestionnaire Composer prépare votre nouveau projet Symfony dans un répertoire `my-project`.
-Se projet sera basé sur l'architecture `symfony/skeleton`.
 
-# Se rendre dans le répertoire du projet
-
-Pensez maintenant à pointer votre Terminal dans le répertoire de votre nouveau projet pour pouvoir travailler.
+# Installer le composant Web Server Bundle
 
 ```bash
-cd my-project
+composer require symfony/web-server-bundle --dev
+```
+
+
+# Démarrer le Serveur Web
+
+```bash
+php bin/console server:run
+```
+
+
+# Arrêter le Serveur Web
+
+```bash
+php bin/console server:stop
 ```
