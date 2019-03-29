@@ -2,5 +2,5 @@
 
 Ressources de cours
 
-- [Installation d'un projet Symfony](https://github.com/OSW3-Campus/Symfony4/tree/installation)
-- [Le serveur interne](https://github.com/OSW3-Campus/Symfony4/tree/le_serveur_interne)
+- [Installation d'un nouveau projet](https://github.com/OSW3-Campus/Symfony4/tree/chapitre-01)
+- [Le serveur interne](https://github.com/OSW3-Campus/Symfony4/tree/chapitre-02)
