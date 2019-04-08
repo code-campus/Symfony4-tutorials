@@ -11,3 +11,4 @@ Ressources de cours
 ---
 
 - Chapitre xx : [Envoyer des email avec SwiftMailer](https://github.com/OSW3-Campus/Symfony4/tree/swiftmailer)
+- Chapitre xx : [Gestion des utilisateurs en WebService](https://github.com/OSW3-Campus/Symfony4/tree/user-webservice)
