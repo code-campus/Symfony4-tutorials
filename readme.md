@@ -80,7 +80,7 @@ php bin/console doctrine:database:create
 php bin/console make:user
 ```
 
-Valider sans modification, les suggestions du terminal
+Valider, sans modification, les suggestions du terminal
 
 ```bash
 > The name of the security user class [User]:
