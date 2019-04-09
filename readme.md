@@ -1,6 +1,6 @@
 # Symfony 4
 
-Ressources de cours
+## Les bases
 
 - Chapitre 01 : [Installation d'un nouveau projet](https://github.com/OSW3-Campus/Symfony4/tree/chapitre-01)
 - Chapitre 02 : [Le serveur interne](https://github.com/OSW3-Campus/Symfony4/tree/chapitre-02)
@@ -14,6 +14,8 @@ Ressources de cours
 
 
 ---
+
+## Les fonctionnalités essentielles
 
 - Chapitre xx : [Envoyer des email avec SwiftMailer](https://github.com/OSW3-Campus/Symfony4/tree/swiftmailer)
 - Chapitre xx : [Gestion des utilisateurs](https://github.com/OSW3-Campus/Symfony4/tree/user)
