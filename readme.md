@@ -3,9 +3,11 @@
 > Comprendre et utiliser le Maker de Symfony 4
 
 
+
 # Le Maker, qu'est ce que c'est ?
 
 Le Maker est un outil qui permet de créer des commandes vides, des contrôleurs, des classes de formulaire, des tests... afin que les développeurs puissent oublier d’écrire du code standard.
+
 
 
 # Création d'un projet 
@@ -16,11 +18,14 @@ cd my-project
 ```
 
 
+
 # Installer le composant Maker Bundle
 
 ```bash
 composer require symfony/maker-bundle --dev
 ```
+
+
 
 # Utilisation du Maker
 
@@ -49,4 +54,18 @@ make:unit-test              Creates a new unit test class
 make:user                   Creates a new security user class
 make:validator              Creates a new validator and constraint class
 make:voter                  Creates a new security voter class
+```
+
+
+
+# Modifier le Namespace
+
+Par défaut le Namespace d'un projet est `App` (e.g. `App\Entity\Book`).  
+Pour modifier le Namespace en `Acme` par exemple, de sorte à obtenir `Acme\Entity\Book`
+
+Créer le fichier de configuration `config/packages/dev/maker.yaml` et y ajouter la configuration :
+
+```yaml
+maker:
+    root_namespace: 'Acme'
 ```
