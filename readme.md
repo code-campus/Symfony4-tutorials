@@ -176,7 +176,7 @@ curl -X PUT http://127.0.0.1:8000/api/books/{id}.json -H "Content-Type: applicat
 
 ## Supprimer une entrée
 
-Equivalent de la méthode `delete` de la commande `make:crud`
+Equivalent de la méthode `delete` de la commande `make:crud`
 
 ```bash
 curl -X DELETE http://127.0.0.1:8000/api/books/{id}.json -d id=42
