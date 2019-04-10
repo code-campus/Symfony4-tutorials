@@ -1,4 +1,4 @@
-# Création d'un projet Symfony 4
+# C.R.U.D. en WebService avec API Platform
 > ### Objectifs :
 > Créer un C.R.U.D. simple avec API Platform
 
@@ -181,5 +181,3 @@ Equivalent de la méthode `delete` de la commande `make:crud`
 ```bash
 curl -X DELETE http://127.0.0.1:8000/api/books/{id}.json -d id=42
 ```
-
-
