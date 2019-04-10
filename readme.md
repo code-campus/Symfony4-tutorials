@@ -140,7 +140,7 @@ Executer à nouveau la commande `php bin/console debug:router` pour constater qu
 
 ## Liste des entrées
 
-Equivalent de la méthode `index` de la commande `make:crud`
+Equivalent de la méthode `index` de la commande `make:crud`
 
 ```bash
 curl -X GET http://127.0.0.1:8000/api/books.json
@@ -149,7 +149,7 @@ curl -X GET http://127.0.0.1:8000/api/books.json
 
 ## Ajouter une entrée
 
-Equivalent de la méthode `new` de la commande `make:crud`
+Equivalent de la méthode `new` de la commande `make:crud`
 
 ```bash
 curl -X POST http://127.0.0.1:8000/api/books.json -H "Content-Type: application/json" -d {"title": "Un super livre", "description": "lorem ipsum blabla...", "price": 9.99}
@@ -158,7 +158,7 @@ curl -X POST http://127.0.0.1:8000/api/books.json -H "Content-Type: application/
 
 ## Affiché le détail d'une entrée
 
-Equivalent de la méthode `show` de la commande `make:crud`
+Equivalent de la méthode `show` de la commande `make:crud`
 
 ```bash
 curl -X GET http://127.0.0.1:8000/api/books/{id}.json -d id=42
@@ -167,7 +167,7 @@ curl -X GET http://127.0.0.1:8000/api/books/{id}.json -d id=42
 
 ## Modifier une entrée
 
-Equivalent de la méthode `edit` de la commande `make:crud`
+Equivalent de la méthode `edit` de la commande `make:crud`
 
 ```bash
 curl -X PUT http://127.0.0.1:8000/api/books/{id}.json -H "Content-Type: application/json" -d {"title": "Azerty"}
@@ -176,7 +176,7 @@ curl -X PUT http://127.0.0.1:8000/api/books/{id}.json -H "Content-Type: applicat
 
 ## Supprimer une entrée
 
-Equivalent de la méthode `delete` de la commande `make:crud`
+Equivalent de la méthode `delete` de la commande `make:crud`
 
 ```bash
 curl -X DELETE http://127.0.0.1:8000/api/books/{id}.json -d id=42
