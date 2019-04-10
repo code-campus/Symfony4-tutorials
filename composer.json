@@ -7,7 +7,7 @@
         "ext-iconv": "*",
         "symfony/console": "4.2.*",
         "symfony/dotenv": "4.2.*",
-        "symfony/flex": "^1.1",
+        "symfony/flex": "^1.2",
         "symfony/framework-bundle": "4.2.*",
         "symfony/yaml": "4.2.*"
     },
@@ -55,5 +55,9 @@
             "allow-contrib": false,
             "require": "4.2.*"
         }
+    },
+    "require-dev": {
+        "symfony/maker-bundle": "^1.11",
+        "symfony/web-server-bundle": "4.2.*"
     }
 }
