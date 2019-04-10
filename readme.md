@@ -21,3 +21,11 @@
 - Chapitre xx : [Gestion des utilisateurs](https://github.com/OSW3-Campus/Symfony4/tree/user)
 - Chapitre xx : [Gestion des utilisateurs en WebService](https://github.com/OSW3-Campus/Symfony4/tree/user-webservice)
 - Chapitre xx : [C.R.U.D. en WebService avec API Platform](https://github.com/OSW3-Campus/Symfony4/tree/api-platform)
+
+
+---
+
+## Les fonctionnalités avancées
+
+<!-- https://blog.webnet.fr/interaction-blockchain-privee-php-symfony-web3/ -->
+- Chapitre xx : [Blockchain et SmartContract](https://github.com/OSW3-Campus/Symfony4/tree/blockchain)
