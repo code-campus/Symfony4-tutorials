@@ -1,5 +1,8 @@
 # Symfony 4
 
+> Chaque chapitre repart d'un projet vierge.  
+> Chaque projet est conçu à partir de l'architecture minimaliste de Symfony.
+
 ## Les bases
 
 - Chapitre 01 : [Installation d'un nouveau projet](https://github.com/OSW3-Campus/Symfony4/tree/chapitre-01)
