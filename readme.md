@@ -8,23 +8,25 @@
 
 Vous pouvez créer votre projet Symfony de deux façons :
 
-## Pour une architecture classique
+## Pour une architecture basique
 
 ```bash
 composer create-project symfony/website-skeleton my-project
 ```
 
-Le gestionnaire Composer prépare votre nouveau projet Symfony dans un répertoire `my-project`.
+Le gestionnaire **Composer** prépare votre nouveau projet Symfony dans un répertoire `my-project`.  
 Se projet sera basé sur l'architecture `symfony/website-skeleton`.
 
-## Pour une architecture WebService
+## Pour une architecture minimaliste
 
 ```bash
 composer create-project symfony/skeleton my-project
 ```
 
-Le gestionnaire Composer prépare votre nouveau projet Symfony dans un répertoire `my-project`.
+Le gestionnaire **Composer** prépare votre nouveau projet Symfony dans un répertoire `my-project`.  
 Se projet sera basé sur l'architecture `symfony/skeleton`.
+
+L'architecture minimaliste de Symfony est plus adapté pour des projets orienté WebService.
 
 # Se rendre dans le répertoire du projet
 
