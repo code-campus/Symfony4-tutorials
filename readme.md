@@ -16,11 +16,16 @@ cd my-project
 # Installation des dépendances
 
 ## Liste des dépendances
-- `symfony/flex`
-- `symfony/web-server-bundle` permet de controler le serveur interne de PHP.
-- `symfony/maker-bundle` permet de créer un controleur.
-- `symfony/orm-pack` permet de créer et gérer la base de données.
-- `annotations` permet de créer une route en annotation dans notre controleur.
+- `symfony/flex`
+- `symfony/web-server-bundle` permet de controler le serveur interne de PHP.
+- `symfony/maker-bundle` permet de créer un controleur.
+- `symfony/orm-pack` permet de créer et gérer la base de données.
+- `annotations` permet de créer une route en annotation dans notre controleur.
+- `form` permet au maker de créer les formulaires
+- `validator` 
+- `twig-bundle` permet de gérer les vues
+- `security-csrf` permet de sécurisé les envoies de données
+
 
 ## Commandes d'installation
 
