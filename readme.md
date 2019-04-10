@@ -4,6 +4,9 @@
 > ### Notes :
 > Dans ce cours, le terme **my-project** réprésente le nom du projet. Remplacez ce terme par le nom de votre projet.
 
+
+
+
 # Création d'un projet 
 
 Vous pouvez créer votre projet Symfony de deux façons :
@@ -17,6 +20,7 @@ composer create-project symfony/website-skeleton my-project
 Le gestionnaire **Composer** prépare votre nouveau projet Symfony dans un répertoire `my-project`.  
 Se projet sera basé sur l'architecture `symfony/website-skeleton`.
 
+
 ## Pour une architecture minimaliste
 
 ```bash
@@ -27,6 +31,9 @@ Le gestionnaire **Composer** prépare votre nouveau projet Symfony dans un répe
 Se projet sera basé sur l'architecture `symfony/skeleton`.
 
 L'architecture minimaliste de Symfony est plus adapté pour des projets orienté WebService.
+
+
+
 
 # Se rendre dans le répertoire du projet
 
