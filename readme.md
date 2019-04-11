@@ -1,4 +1,4 @@
-# Symfony 4
+# Symfony 4 : Tutorials
 
 > Chaque chapitre repart d'un projet vierge.  
 > Chaque projet est conçu à partir de l'architecture minimaliste de Symfony.
