@@ -1,3 +1,7 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+
+secutity:api:login:
+    path: /api/login
+    methods: POST

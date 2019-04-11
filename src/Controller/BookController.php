@@ -19,7 +19,7 @@ class BookController extends AbstractController
      */
     public function index(BookRepository $bookRepository): Response
     {
-        return $this->json( $bookRepository->findAll() );
+        return $this->json($bookRepository->findAll());
     }
 
     /**
@@ -47,7 +47,7 @@ class BookController extends AbstractController
     }
 
     /**
-     * @Route("/books/{id}.json", name="show", methods={"GET"})
+     * @Route("/books/{id}.json", name=":show", methods={"GET"})
      */
     public function show(Book $book): Response
     {
@@ -55,7 +55,7 @@ class BookController extends AbstractController
     }
 
     /**
-     * @Route("/books/{id}.json", name="edit", methods={"PUT"})
+     * @Route("/books/{id}.json", name=":edit", methods={"PUT"})
      */
     public function edit(Request $request, Book $book): Response
     {
@@ -75,7 +75,7 @@ class BookController extends AbstractController
     }
 
     /**
-     * @Route("/books/{id}.json", name="delete", methods={"DELETE"})
+     * @Route("/books/{id}.json", name=":delete", methods={"DELETE"})
      */
     public function delete(Request $request, Book $book): Response
     {
