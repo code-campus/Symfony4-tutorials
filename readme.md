@@ -22,6 +22,7 @@ cd my-project
 - `symfony/orm-pack` permet de créer et gérer la base de données.
 - `symfony/serializer`
 - `annotations` permet de créer une route en annotation dans notre controleur.
+- `nelmio/cors-bundle` [Cross-Origin Resource Sharing](https://enable-cors.org/).
 
 ## Commandes d'installation
 
@@ -33,7 +34,7 @@ composer require symfony/orm-pack
 composer require symfony/serializer
 composer require symfony/property-access
 composer require annotations
-
+composer require nelmio/cors-bundle
 ```
 
 
@@ -238,4 +239,45 @@ public function delete(Request $request, Book $book): Response
         "message" => "Entity ID : ". $bookID ." is deleted"
     ]);
 }
+```
+
+
+
+
+# Cross-Origin Resource Sharing
+
+## installation
+
+```bash
+composer require nelmio/cors-bundle
+```
+
+## Configuration
+
+Modifier la configuration dans le fichier `config/packages/nelmio_cors.yaml`.
+
+```yaml
+nelmio_cors:
+    defaults:
+        origin_regex: true
+        allow_origin: ['%env(CORS_ALLOW_ORIGIN)%']
+        allow_methods: ['GET', 'OPTIONS', 'POST', 'PUT', 'PATCH', 'DELETE']
+        allow_headers: ['Content-Type', 'Authorization']
+        expose_headers: ['Link']
+        max_age: 3600
+    paths:
+        # https://site.com/api/...
+        '^/api/':
+            allow_origin: ['*']
+            allow_headers: ['X-Custom-Auth']
+            allow_methods: ['POST', 'PUT', 'GET', 'DELETE']
+            max_age: 3600
+        # https://api.site.com/...
+        # '^/':
+        #     origin_regex: true
+        #     allow_origin: ['^http://localhost:[0-9]+']
+        #     allow_headers: ['X-Custom-Auth']
+        #     allow_methods: ['POST', 'PUT', 'GET', 'DELETE']
+        #     max_age: 3600
+        #     hosts: ['^api\.']
 ```
