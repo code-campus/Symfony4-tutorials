@@ -31,6 +31,11 @@ class BookController extends AbstractController
 
         $data = \json_decode($request->getContent(), true);
 
+        // Suppression des propriété qui ne seront pas traitées
+        if (isset($data['id'])) {
+            unset($data['id']);
+        }
+
         foreach ($data as $key => $value)
         {
             $property = ucfirst($key);
@@ -60,6 +65,11 @@ class BookController extends AbstractController
     public function edit(Request $request, Book $book): Response
     {
         $data = \json_decode($request->getContent(), true);
+
+        // Suppression des propriété qui ne seront pas traitées
+        if (isset($data['id'])) {
+            unset($data['id']);
+        }
 
         foreach ($data as $key => $value)
         {
