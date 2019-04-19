@@ -37,6 +37,7 @@ composer require symfony/property-access
 composer require annotations
 composer require security
 composer require lexik/jwt-authentication-bundle
+composer require nelmio/cors-bundle
 ```
 
 
@@ -580,4 +581,44 @@ secutity:api:login:
 ```bash
 curl -X POST http://127.0.0.1:8000/api/login -H "Content-Type: application/json" -d '{ "email": "john@doe.com", "password": "123456" }'
 > {"token": "..."}
+```
+
+
+
+# Cross-Origin Resource Sharing
+
+## installation
+
+```bash
+composer require nelmio/cors-bundle
+```
+
+## Configuration
+
+Modifier la configuration dans le fichier config/packages/nelmio_cors.yaml.
+
+```yaml
+nelmio_cors:
+    defaults:
+        origin_regex: true
+        allow_origin: ['%env(CORS_ALLOW_ORIGIN)%']
+        allow_methods: ['GET', 'OPTIONS', 'POST', 'PUT', 'PATCH', 'DELETE']
+        allow_headers: ['Content-Type', 'Authorization']
+        expose_headers: ['Link']
+        max_age: 3600
+    paths:
+        # https://site.com/api/...
+        '^/api/':
+            allow_origin: ['*']
+            allow_headers: ['X-Custom-Auth']
+            allow_methods: ['POST', 'PUT', 'GET', 'DELETE']
+            max_age: 3600
+        # https://api.site.com/...
+        # '^/':
+        #     origin_regex: true
+        #     allow_origin: ['^http://localhost:[0-9]+']
+        #     allow_headers: ['X-Custom-Auth']
+        #     allow_methods: ['POST', 'PUT', 'GET', 'DELETE']
+        #     max_age: 3600
+        #     hosts: ['^api\.']
 ```
