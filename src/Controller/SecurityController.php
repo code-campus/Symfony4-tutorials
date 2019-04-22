@@ -49,4 +49,16 @@ class SecurityController extends AbstractController
             "email" => $user->getEmail()
         ]);
     }
+
+    /**
+     * @Route(
+     *      "/profile", 
+     *      name=":profile", 
+     *      methods={"GET"}
+     * )
+     */
+    public function profile(Request $request)
+    {
+        return $this->json( $this->getUser() );
+    }
 }

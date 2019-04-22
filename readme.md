@@ -398,6 +398,53 @@ security:
         - { path: ^/api,            roles: IS_AUTHENTICATED_FULLY }
 ```
 
+## Personnaliser la réponse de JWT Authentication Bundle
+
+Par défaut, lorsque la connexion est réussie, JWT Authentication Bundle ne retourne que le token.  
+Il est souvent utilie de recevoir d'autres informations liées à l'utilisateur.
+
+### Créer le Listener 
+
+Créer le fichier `src/EventListener/AuthenticationSuccessListener.php`.
+
+```php
+namespace App\EventListener;
+
+use Lexik\Bundle\JWTAuthenticationBundle\Event\AuthenticationSuccessEvent;
+
+class AuthenticationSuccessListener
+{
+    /**
+     * @param AuthenticationSuccessEvent $event
+     */
+    public function onAuthenticationSuccessResponse(AuthenticationSuccessEvent $event)
+    {
+
+        $data = $event->getData();
+        $user = $event->getUser();
+
+        // Add custom data
+        $data['id'] = $user->getId();
+        $data['firstname'] = $user->getFirstname();
+        $data['lastname'] = $user->getLastname();
+        $data['email'] = $user->getEmail();
+    
+        $event->setData($data);
+    }
+}
+```
+
+### Déclarer le Listener
+
+Déclarer le `Listener` dans le fichier `config/services.yaml`.
+
+```yaml
+services:
+    App\EventListener\AuthenticationSuccessListener:
+        tags:
+            - { name: kernel.event_listener, event: lexik_jwt_authentication.on_authentication_success, method: onAuthenticationSuccessResponse }
+```
+
 
 
 # Création du contrôleur security
