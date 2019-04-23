@@ -61,4 +61,51 @@ class SecurityController extends AbstractController
     {
         return $this->json( $this->getUser() );
     }
+
+    /**
+     * @Route(
+     *      "/forgotten-password", 
+     *      name=":forgottenPassword", 
+     *      methods={"POST"}
+     * )
+     */
+    public function forgottenPassword(Request $request)
+    {
+        // Retrieve Registration data
+        $data = \json_decode($request->getContent(), true);
+
+        return $this->json( $data );
+    }
+
+    /**
+     * @Route(
+     *      "/renew-password", 
+     *      name=":renewPassword", 
+     *      methods={"POST"}
+     * )
+     */
+    public function renewPassword(Request $request, UserPasswordEncoderInterface $passwordEncoder)
+    {
+        // Retrieve Registration data
+        $data = \json_decode($request->getContent(), true);
+        $user = $this->getUser();
+
+        $passwordOld = $data['passwordOld'];
+        $passwordNew = $data['passwordNew'];
+        $passwordConfirmation = $data['passwordConfirmation'];
+
+        // Si l'ancien mot de passe est correct
+        if ($passwordEncoder->isPasswordValid($user, $passwordOld) && $passwordNew == $passwordConfirmation)
+        {
+            // $newEncodedPassword = $passwordEncoder->encodePassword($user, $user->getPlainPassword());
+            $newEncodedPassword = $passwordEncoder->encodePassword($user, $passwordNew);
+            $user->setPassword($newEncodedPassword);
+            
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($user);
+            $em->flush();
+        }
+
+        return $this->json( [$passwordOld, $passwordNew, $passwordConfirmation, $user] );
+    }
 }

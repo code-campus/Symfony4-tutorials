@@ -18,6 +18,11 @@ security:
             pattern:  ^/api/register
             stateless: true
             anonymous: true
+            
+        forgotten-password:
+            pattern:  ^/api/forgotten-password
+            stateless: true
+            anonymous: true
 
         login:
             pattern:   ^/api/login
@@ -43,5 +48,6 @@ security:
     access_control:
         - { path: ^/api/login,      roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/api/register,   roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/api/forgotten-password,   roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/api,            roles: IS_AUTHENTICATED_FULLY }
         # - { path: ^/api,   roles: IS_AUTHENTICATED_ANONYMOUSLY }
