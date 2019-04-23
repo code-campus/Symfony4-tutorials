@@ -97,7 +97,6 @@ class SecurityController extends AbstractController
         // Si l'ancien mot de passe est correct
         if ($passwordEncoder->isPasswordValid($user, $passwordOld) && $passwordNew == $passwordConfirmation)
         {
-            // $newEncodedPassword = $passwordEncoder->encodePassword($user, $user->getPlainPassword());
             $newEncodedPassword = $passwordEncoder->encodePassword($user, $passwordNew);
             $user->setPassword($newEncodedPassword);
             
