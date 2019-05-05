@@ -1,6 +1,8 @@
-# C.R.U.D. en WebService
+# Les identifiant UUIDs
 > ### Objectifs :
-> Créer et gérer une entité (crud) en Web Service.
+> Remplacer la clé primaire d'une entite ID de type integer par une valeur de type UUID
+> ### Notes : 
+> Ce cours est basé sur le cours [C.R.U.D. en WebService](https://github.com/OSW3-Campus/Symfony4-tutorials/tree/crud-webservice)
 
 
 
@@ -23,6 +25,7 @@ cd my-project
 - `symfony/serializer`
 - `annotations` permet de créer une route en annotation dans notre controleur.
 - `nelmio/cors-bundle` [Cross-Origin Resource Sharing](https://enable-cors.org/).
+- `ramsey/uuid-doctrine` permet de générer les UUID
 
 ## Commandes d'installation
 
@@ -35,6 +38,7 @@ composer require symfony/serializer
 composer require symfony/property-access
 composer require annotations
 composer require nelmio/cors-bundle
+composer require ramsey/uuid-doctrine
 ```
 
 
@@ -72,6 +76,19 @@ php bin/console doctrine:database:create
 
 
 
+# Modifier la configuration
+
+Modifier le fichier de configuration `config/package/doctrine.yaml` pour ajouter le type `uuid`
+
+```yaml
+doctrine:
+    dbal:
+        types:
+            uuid:  Ramsey\Uuid\Doctrine\UuidType
+```
+
+
+
 # Créer une entité
 
 ## Créer l'entité
@@ -80,7 +97,7 @@ php bin/console doctrine:database:create
 php bin/console make:entity Book
 ```
 
-## Ajouter les propriété
+## Ajouter les propriétés
 
 - **title** :
     - type : string
@@ -92,6 +109,46 @@ php bin/console make:entity Book
 - **price** :
     - type : float
     - nullable : no
+
+## Ajouter la classe
+
+```php
+/**
+ * @var \Ramsey\Uuid\UuidInterface
+ *
+ * @ORM\Id
+ * @ORM\Column(type="uuid", unique=true)
+ * @ORM\GeneratedValue(strategy="CUSTOM")
+ * @ORM\CustomIdGenerator(class="Ramsey\Uuid\Doctrine\UuidGenerator")
+ */
+private $id;
+
+public function getId()
+{
+    return $this->id;
+}
+```
+
+Pour typer le Getter
+
+```php
+use \Ramsey\Uuid\UuidInterface as UUID;
+
+/**
+ * @var UUID
+ *
+ * @ORM\Id
+ * @ORM\Column(type="uuid", unique=true)
+ * @ORM\GeneratedValue(strategy="CUSTOM")
+ * @ORM\CustomIdGenerator(class="Ramsey\Uuid\Doctrine\UuidGenerator")
+ */
+private $id;
+
+public function getId(): ?uuid
+{
+    return $this->id;
+}
+```
 
 ## Mise à jour de la base de données
 

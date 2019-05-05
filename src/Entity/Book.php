@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use \Ramsey\Uuid\UuidInterface as UUID;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\BookRepository")
@@ -10,9 +11,12 @@ use Doctrine\ORM\Mapping as ORM;
 class Book
 {
     /**
-     * @ORM\Id()
-     * @ORM\GeneratedValue()
-     * @ORM\Column(type="integer")
+     * @var UUID
+     *
+     * @ORM\Id
+     * @ORM\Column(type="uuid", unique=true)
+     * @ORM\GeneratedValue(strategy="CUSTOM")
+     * @ORM\CustomIdGenerator(class="Ramsey\Uuid\Doctrine\UuidGenerator")
      */
     private $id;
 
@@ -31,7 +35,7 @@ class Book
      */
     private $price;
 
-    public function getId(): ?int
+    public function getId(): uuid
     {
         return $this->id;
     }
