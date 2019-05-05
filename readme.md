@@ -32,5 +32,6 @@
 
 ## Les fonctionnalités avancées
 
+- Chapitre xx : [Les identifiant UUIDs](https://github.com/OSW3-Campus/Symfony4-tutorials/tree/id-uuid)
 <!-- https://blog.webnet.fr/interaction-blockchain-privee-php-symfony-web3/ -->
 - Chapitre xx : [Blockchain et SmartContract](https://github.com/OSW3-Campus/Symfony4-tutorials/tree/blockchain)
