@@ -269,7 +269,7 @@ nelmio_cors:
         # https://site.com/api/...
         '^/api/':
             allow_origin: ['*']
-            allow_headers: ['X-Custom-Auth']
+            allow_headers: ['Content-Type', 'Authorization']
             allow_methods: ['POST', 'PUT', 'GET', 'DELETE']
             max_age: 3600
         # https://api.site.com/...

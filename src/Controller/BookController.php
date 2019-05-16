@@ -30,6 +30,7 @@ class BookController extends AbstractController
         $book = new Book();
 
         $data = \json_decode($request->getContent(), true);
+        $data = is_array($data) ? $data : [];
 
         // Suppression des propriété qui ne seront pas traitées
         if (isset($data['id'])) {
@@ -65,6 +66,7 @@ class BookController extends AbstractController
     public function edit(Request $request, Book $book): Response
     {
         $data = \json_decode($request->getContent(), true);
+        $data = is_array($data) ? $data : [];
 
         // Suppression des propriété qui ne seront pas traitées
         if (isset($data['id'])) {
