@@ -38,6 +38,8 @@ class BookController extends AbstractController
 
             $book->$property($value);
         }
+        
+        $book->setUser($this->getUser());
 
         $em = $this->getDoctrine()->getManager();
         $em->persist($book);
